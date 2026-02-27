@@ -1,0 +1,21 @@
+
+name: Variables and Secrets in GitHub Actions
+
+on:
+  push: 
+    branches: [ "main" ]
+  workflow_dispatch:
+env:
+  author: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      baseapi: http://baseurl.api/
+    steps:
+      - name: All Type of Varialbes and Secrets
+        run: 
+          echo "$author has created the api $baseapi which will expire in $expire"
+        env:
+          expire: 10days
