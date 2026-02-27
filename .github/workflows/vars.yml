@@ -20,6 +20,6 @@ jobs:
           echo "Configuration Variable | Version of App is ${{ vars.version }}"
           echo "Secret | Secret Key is ${{ secrets.KEY }}"
           ${{secrets.KEY_VISIBLE}}
-
+          echo "Context Variables | Repo Name is ${{ github.repository }}"
         env:
           expire: 10days
