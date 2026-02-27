@@ -16,6 +16,10 @@ jobs:
     steps:
       - name: All Type of Varialbes and Secrets
         run: 
-          echo "$author has created the api $baseapi which will expire in $expire"
+          echo "Workflow Variable | $author has created the api $baseapi which will expire in $expire"
+          echo "Configuration Variable | Version of App is ${{ vars.version }}"
+          echo "Secret | Secret Key is ${{ secrets.KEY }}"
+          ${{secrets.KEY_VISIBLE}}
+
         env:
           expire: 10days
